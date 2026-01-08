@@ -9,31 +9,40 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
 </head>
 <body>
+  <div class="container">
+  <h1 class="title">Universal CSE Resume Analyzer</h1>
+  <p class="subtitle">Upload a PDF resume or paste text for professional analysis</p>
 
-<div class="container">
-  <h1>Universal CSE Resume Analyzer</h1>
-  <p>Upload PDF or paste resume text</p>
-
+  <label class="label">Upload Resume (PDF)</label>
   <input type="file" id="pdfInput" accept=".pdf">
 
+  <label class="label">Paste Resume Text</label>
   <textarea id="resumeText" placeholder="Or paste resume text here..."></textarea>
 
-  <select id="role">
-    <option>Software Engineer</option>
-    <option>Web Developer</option>
-    <option>Backend Developer</option>
-    <option>Data Scientist</option>
-    <option>AI/ML Engineer</option>
-    <option>Cyber Security</option>
-    <option>Cloud Engineer</option>
-    <option>DevOps Engineer</option>
-  </select>
+  <div class="row">
+    <div>
+      <label class="label">Target Role</label>
+      <select id="role">
+        <option>Software Engineer</option>
+        <option>Web Developer</option>
+        <option>Backend Developer</option>
+        <option>Data Scientist</option>
+        <option>AI/ML Engineer</option>
+        <option>Cyber Security</option>
+        <option>Cloud Engineer</option>
+        <option>DevOps Engineer</option>
+      </select>
+    </div>
 
-  <select id="level">
-    <option value="fresher">Fresher</option>
-    <option value="junior">1–3 Years</option>
-    <option value="senior">3+ Years</option>
-  </select>
+    <div>
+      <label class="label">Experience Level</label>
+      <select id="level">
+        <option value="fresher">Fresher</option>
+        <option value="junior">1–3 Years</option>
+        <option value="senior">3+ Years</option>
+      </select>
+    </div>
+  </div>
 
   <button onclick="analyzeResume()">Analyze Resume</button>
 
@@ -51,6 +60,8 @@
     <ul id="suggestions"></ul>
   </div>
 </div>
+
+
 
 <script src="script.js"></script>
 </body>
