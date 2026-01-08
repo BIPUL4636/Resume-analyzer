@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Resume Analyzer</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="overlay"></div>
+
+<div class="container">
+  <h1>AI Resume Analyzer</h1>
+  <p class="subtitle">ATS-style resume evaluation with AI insights</p>
+
+  <textarea id="resumeText" placeholder="Paste resume text (optional)..."></textarea>
+
+  <input type="file" id="pdfInput" accept=".pdf">
+
+  <select id="role">
+    <option>Web Developer</option>
+    <option>Java Developer</option>
+    <option>Backend Developer</option>
+  </select>
+
+  <button onclick="analyzeResume()">Analyze Resume</button>
+
+  <div id="result" class="result">
+
+    <div class="dashboard">
+
+      <!-- SCORE -->
+      <div>
+        <div id="circle" class="circle">
+          <span id="percent">0%</span>
+        </div>
+        <div id="confidence" class="confidence"></div>
+      </div>
+
+      <!-- DETAILS -->
+      <div>
+
+        <div class="section">
+          <h3>ATS Score Breakdown</h3>
+          <div class="ats-grid">
+            <div>Skills Match <span id="skillScore"></span></div>
+            <div>Keyword Density <span id="keywordScore"></span></div>
+            <div>Formatting <span id="formatScore"></span></div>
+            <div>Role Alignment <span id="roleScore"></span></div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Matched Skills</h3>
+          <div id="matchedSkills" class="skills"></div>
+        </div>
+
+        <div class="section">
+          <h3>Missing Skills</h3>
+          <div id="missingSkills" class="skills"></div>
+        </div>
+
+        <div class="section">
+          <h3>Improvement Suggestions</h3>
+          <ul id="suggestions"></ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
